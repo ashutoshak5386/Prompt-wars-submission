@@ -1,0 +1,13 @@
+{
+  "name": "h2s-smart-event-system",
+  "version": "1.0.0",
+  "description": "Smart Event Experience System for Large-Scale Sporting Venues",
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c cyan,magenta \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
