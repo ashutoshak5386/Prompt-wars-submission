@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: process.env.FRONTEND_URL ? [process.env.FRONTEND_URL, "http://localhost:3000"] : "*",
     methods: ["GET", "POST"],
   },
 });
@@ -30,6 +30,11 @@ app.use("/api", apiRoutes);
 // Health check
 app.get("/health", (_req, res) => {
   res.json({ status: "ok", uptime: process.uptime() });
+});
+
+// Root checkout status page
+app.get("/", (req, res) => {
+  res.send("Horizon Stadium Backend is up and running! 🚀");
 });
 
 // Socket.io connection handling
