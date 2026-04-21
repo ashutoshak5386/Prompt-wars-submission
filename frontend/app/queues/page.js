@@ -17,7 +17,7 @@ import {
   Check,
 } from "lucide-react";
 
-const BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+const BACKEND = (process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001").replace(/\/$/, "");
 
 const TYPE_ICONS = {
   food: Utensils,

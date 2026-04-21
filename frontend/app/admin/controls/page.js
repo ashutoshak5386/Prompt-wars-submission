@@ -17,7 +17,7 @@ import {
   WifiOff,
 } from "lucide-react";
 
-const BACKEND = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+const BACKEND = (process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001").replace(/\/$/, "");
 
 const QUICK_ALERTS = [
   { label: "Gate Reassignment", message: "Attention: Gate assignments have been updated. Please check your app for new gate info.", severity: "info", type: "gate-change", icon: DoorOpen, color: "#34d399" },
